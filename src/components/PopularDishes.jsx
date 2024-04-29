@@ -68,8 +68,8 @@ const PopularDishes = () => {
     
    
 ]
-  return (<div className="px-6 bg-background py-8">
-    <h2 className="text-primary font-bold text-xl py-6">Popular Dishes</h2>
+  return (<div className="px-6 bg-background py-2">
+    <h2 className="text-primary font-bold lg:text-2xl text-xl py-4">Popular Dishes</h2>
      <div>
      <Swiper
               modules = {[Autoplay, Pagination]}
@@ -90,7 +90,7 @@ const PopularDishes = () => {
                   },
               }
               }
-              className="lg:h-[16.8rem] h-[11rem] lg:px-6 px-0"
+              className="lg:h-[16.8rem] h-[11rem] lg:px-4 px-0 my-2"
           >
               <div className=' border-blue-700 border-2'>
                   {
