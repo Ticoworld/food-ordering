@@ -99,7 +99,7 @@ const PopularDishes = () => {
                 <div className="lg:w-48 lg:h-58  w-28 border-yellow-600 border-2 rounded-md p-1" key={popularDish.id}>
                     <div className="flex items-center justify-between flex-col gap-0">
                         <div>
-                        <img src={popularDish.image} alt=""  className="lg:w-44 w-24 rounded-sm lg:h-36 h-[5rem] object-cover "/>   
+                        <img src={popularDish.image} alt=""  className="lg:w-44 w-24 rounded-md lg:h-36 h-[5rem] object-cover "/>   
                         </div>
                         <div className="details w-full">
                             <h5 className="text-yellow-700 font-semibold lg:text-lg text-xs uppercase text-wrap ">{popularDish.dishName}</h5>
