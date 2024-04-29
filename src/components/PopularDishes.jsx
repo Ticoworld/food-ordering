@@ -90,7 +90,7 @@ const PopularDishes = () => {
                   },
               }
               }
-              className="h-[16.8rem] lg:px-6 px-0"
+              className="lg:h-[16.8rem] h-[11rem] lg:px-6 px-0"
           >
               <div className=' border-blue-700 border-2'>
                   {
