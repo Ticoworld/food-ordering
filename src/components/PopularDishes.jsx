@@ -76,7 +76,7 @@ const PopularDishes = () => {
               slidesPerView={3}
               pagination={{ "clickable": true }}
               autoplay = {{delay: 20000}}
-              spaceBetween={10}
+              spaceBetween={9}
               breakpoints={
               { 
                   320: {
@@ -85,34 +85,37 @@ const PopularDishes = () => {
                   520: {
                       slidesPerView: 4,
                   },
-                  840: {
+                  800: {
+                      slidesPerView: 5,
+                  },
+                  1024: {
                       slidesPerView: 6,
                   },
               }
               }
-              className="lg:h-[16.8rem] h-[11rem] lg:px-4 px-0 my-2"
+              className="lg:h-[15.1rem]  lg:px-4 px-0"
           >
               <div className=' border-blue-700 border-2'>
                   {
             Popular.map((popularDish) => ( 
                   <SwiperSlide key={popularDish.id}>
-                <div className="lg:w-48 lg:h-58  w-28 border-yellow-600 border-2 rounded-md p-1" key={popularDish.id}>
+                <div className="xl:w-48 lg:w-[9.7rem]  border-yellow-600 border-2 rounded-md p-1 gap-2" key={popularDish.id}>
                     <div className="flex items-center justify-between flex-col gap-0">
                         <div>
-                        <img src={popularDish.image} alt=""  className="lg:w-44 w-24 rounded-md lg:h-36 h-[5rem] object-cover "/>   
+                        <img src={popularDish.image} alt=""  className="w-44 rounded-md h-[8.8rem] object-cover "/>   
                         </div>
                         <div className="details w-full">
                             <h5 className="text-yellow-700 font-semibold lg:text-lg text-xs uppercase text-wrap pt-1 ">{popularDish.dishName}</h5>
-                            <div className="flex items-center justify-between lg:gap-2 gap- py-1">
+                            <div className="flex items-center justify-between lg:gap-2 gap-1 py-1">
                             <button title="buy now"
-                            className="bg-red-500 text-white lg:py-2 lg:px-4 px-1 py-1 text-xs lg:text-lg rounded-md cursor-pointer w-full"
+                            className="bg-red-500 text-white py-2 px-4  text-xs lg:text-lg rounded-md cursor-pointer w-full"
                         >
                            ${popularDish.price}
                         </button>
                             <button title="add to cart"
                             className="bg-warning text-white lg:py-2 py-1 x-2 text-center rounded-md cursor-pointer lg:px-4 px-2"
                         >
-                            <FaCartShopping className="lg:text-2xl text-accent cursor-pointer"   />
+                            <FaCartShopping className="text-2xl text-accent cursor-pointer"   />
                         </button>
                             </div>
                         

@@ -10,7 +10,7 @@ const Showcase = () => {
   };
 
   return (
-    <div className="showcase lg:min-h-screen h-[80vh] flex flex-col items-center justify-center px-6 ">
+    <div className="showcase lg:min-h-screen h-[20rem] flex flex-col items-center justify-center px-6 ">
       <div className="text-white text-center">
         <h1 className="text-4xl lg:text-6xl font-bold mb-5 h-32 md:h-auto">
           <span className="text-red-500 font-bold">
