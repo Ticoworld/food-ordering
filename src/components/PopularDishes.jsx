@@ -93,7 +93,7 @@ const PopularDishes = () => {
                   },
               }
               }
-              className="lg:h-[15.1rem]  lg:px-4 px-0"
+              className="h-[15.1rem]  lg:px-4 px-0"
           >
               <div className=' border-blue-700 border-2'>
                   {
@@ -102,10 +102,10 @@ const PopularDishes = () => {
                 <div className="xl:w-48 lg:w-[9.7rem]  border-yellow-600 border-2 rounded-md p-1 gap-2" key={popularDish.id}>
                     <div className="flex items-center justify-between flex-col gap-0">
                         <div>
-                        <img src={popularDish.image} alt=""  className="w-44 rounded-md h-[8.8rem] object-cover "/>   
+                        <img src={popularDish.image} alt=""  className="w-44 rounded-md h-[9rem] object-cover "/>   
                         </div>
                         <div className="details w-full">
-                            <h5 className="text-yellow-700 font-semibold lg:text-lg text-xs uppercase text-wrap pt-1 ">{popularDish.dishName}</h5>
+                            <h5 className="text-yellow-700 font-semibold lg:text-lg text-[0.70rem] uppercase text-wrap pt-1 ">{popularDish.dishName}</h5>
                             <div className="flex items-center justify-between lg:gap-2 gap-1 py-1">
                             <button title="buy now"
                             className="bg-red-500 text-white py-[6px] px-3  text-xs lg:text-lg rounded-md cursor-pointer w-full"
