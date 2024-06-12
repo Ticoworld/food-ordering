@@ -113,8 +113,10 @@ const PopularDishes = () => {
                            ${popularDish.price}
                         </button>
                             <button title="add to cart"
-                            className="bg-warning text-white lg:py-2 py-1 x-2 text-center rounded-md cursor-pointer lg:px-4 px-2"
-                        >
+                            className="bg-warning text-white lg:py-2 py-1 x-2 text-center rounded-md cursor-pointer lg:px-3 px-2 flex items-center flex-row"
+                        > <div className="text-xl"   >
+                            +
+                        </div>
                             <FaCartShopping className="text-2xl text-accent cursor-pointer"   />
                         </button>
                             </div>

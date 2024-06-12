@@ -27,7 +27,7 @@ const Showcase = () => {
         </h1>
         <p className="text-lg lg:text-xl">Order now and indulge in a world of taste!</p>
       </div>
-      <div className="mt-8">
+      <div className="py-10">
         <h2 className="text-xl text-white mb-2">Subscribe to Our Newsletter</h2>
         <div className="flex justify-center items-center">
           <input
