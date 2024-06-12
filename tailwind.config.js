@@ -30,6 +30,7 @@ export default {
         text: '#333333', // Dark grey text color
         success: '#48C774', // Green color for success messages or indicators
         warning: '#FFA500', // Orange color for warning messages or indicators
+        Lightwarning: '#FFA500', // Orange color for warning messages or indicators
         error: '#FF4949', // Red color for error messages or indicators
         info: '#63B3ED', // Blue color for informational messages or indicators
       },

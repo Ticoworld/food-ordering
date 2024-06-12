@@ -10,9 +10,9 @@ const Showcase = () => {
   };
 
   return (
-    <div className="showcase lg:min-h-screen h-[20rem] flex flex-col items-center justify-center px-6 ">
+    <div className="showcase lg:min-h-screen flex flex-col items-center justify-center px-6 ">
       <div className="text-white text-center">
-        <h1 className="text-4xl lg:text-6xl font-bold mb-5 h-32 md:h-auto">
+        <h1 className="text-4xl lg:text-6xl font-bold mb-5 h-32 md:h-auto py-10">
           <span className="text-red-500 font-bold">
             <Typewriter
               words={['Feast on flavors that tantalize', 'Savor the essence of culinary delight', 'Experience gastronomic bliss']}

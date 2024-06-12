@@ -108,16 +108,16 @@ const PopularDishes = () => {
                             <h5 className="text-yellow-700 font-semibold lg:text-lg text-xs uppercase text-wrap pt-1 ">{popularDish.dishName}</h5>
                             <div className="flex items-center justify-between lg:gap-2 gap-1 py-1">
                             <button title="buy now"
-                            className="bg-red-500 text-white py-2 px-4  text-xs lg:text-lg rounded-md cursor-pointer w-full"
+                            className="bg-red-500 text-white py-[6px] px-3  text-xs lg:text-lg rounded-md cursor-pointer w-full"
                         >
                            ${popularDish.price}
                         </button>
                             <button title="add to cart"
-                            className="bg-warning text-white lg:py-2 py-1 x-2 text-center rounded-md cursor-pointer lg:px-3 px-2 flex items-center flex-row"
+                            className="bg-warning text-white lg:py-2 py-0 x-2 text-center rounded-md cursor-pointer lg:px-3 px-1 flex items-center flex-row"
                         > <div className="text-xl"   >
                             +
                         </div>
-                            <FaCartShopping className="text-2xl text-accent cursor-pointer"   />
+                            <FaCartShopping className="lg:text-2xl text-lg text-accent cursor-pointer"   />
                         </button>
                             </div>
                         
