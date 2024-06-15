@@ -33,6 +33,7 @@ export default {
         Lightwarning: '#FFEBCD', // Orange color for warning messages or indicators
         error: '#FF4949', // Red color for error messages or indicators
         info: '#63B3ED', // Blue color for informational messages or indicators
+        'light-yellow': '#FFFFE0'
       },
     },
   },

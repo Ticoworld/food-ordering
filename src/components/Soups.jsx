@@ -78,7 +78,7 @@ const Soups = () => {
       <h2 className="text-gray-900 text-center font-bold lg:text-2xl text-xl py-7">Soups</h2>
       <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {Popular.map((popularDish) => (
-          <div key={popularDish.id} className="shadow-md border-2 rounded-md p-2">
+          <div key={popularDish.id} className="shadow-md border-2 rounded-md p-2 bg-white">
             <div className="flex flex-col items-center gap-2">
               <img src={popularDish.image} alt={popularDish.dishName} className="rounded-md w-full object-cover h-28 sm:h-36 md:h-40 lg:h-48" />
               <h5 className="text-yellow-800 font-semibold text-[0.70rem] sm:text-[0.90rem] md:text-lg  uppercase">{popularDish.dishName}</h5>

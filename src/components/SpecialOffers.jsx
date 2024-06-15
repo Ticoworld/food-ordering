@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCartShopping } from "react-icons/fa6";
+import { FaCartShopping } from 'react-icons/fa6';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -13,54 +13,80 @@ const SpecialOffers = () => {
       image: '/burger.jpeg',
       name: 'Burger',
       price: 5,
+      discount: 20,
       category: 'Burgers',
-      discount: 20, // 20% off
     },
     {
       id: 2,
       image: '/sandwich.jpeg',
       name: 'Sandwich',
       price: 4,
+      discount: 15,
       category: 'Sandwiches',
-      discount: 15, // 15% off
     },
     {
       id: 3,
       image: '/pizza.jpeg',
       name: 'Pizza',
       price: 8,
+      discount: 10,
       category: 'Pizzas',
-      discount: 25, // 25% off
     },
     {
       id: 4,
       image: '/shawarma.jpeg',
       name: 'Shawarma',
       price: 6,
+      discount: 5,
       category: 'Shawarma',
-      discount: 10, // 10% off
     },
     {
       id: 5,
       image: '/doughnut.jpeg',
       name: 'Doughnut',
       price: 2,
+      discount: 25,
       category: 'Doughnuts',
-      discount: 5, // 5% off
+    },
+    {
+      id: 6,
+      image: '/doughnut.jpeg',
+      name: 'Doughnut',
+      price: 2,
+      discount: 25,
+      category: 'Doughnuts',
+    },
+    {
+      id: 7,
+      image: '/doughnut.jpeg',
+      name: 'Doughnut',
+      price: 2,
+      discount: 25,
+      category: 'Doughnuts',
+    },
+    {
+      id: 8,
+      image: '/doughnut.jpeg',
+      name: 'Doughnut',
+      price: 2,
+      discount: 25,
+      category: 'Doughnuts',
     },
   ];
 
   const featuredItems = items.slice(0, 3); // Example: First 3 items as featured
 
   return (
-    <div className="p-5 bg-yellow-50">
+    <div className="p-5 bg-background">
       <h1 className="text-2xl font-bold mb-4 text-center">Special Offers</h1>
+      <p className="text-center mb-4">Don't miss out on our special offers and discounts!</p>
+
       <Swiper
         modules={[Autoplay, Pagination]}
         slidesPerView={1}
+        spaceBetween={10}
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000 }}
-        spaceBetween={10}
         className="mb-6"
       >
         {featuredItems.map((item) => (
@@ -77,19 +103,42 @@ const SpecialOffers = () => {
         ))}
       </Swiper>
 
-      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        spaceBetween={10}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 5000 }}
+        breakpoints={{
+          390: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          600: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 40,
+          },
+          1280: {
+            slidesPerView: 6,
+            spaceBetween: 50,
+          },
+        }}
+      >
         {items.map((item) => (
-          <div key={item.id} className="relative shadow-md border-2 rounded-md p-2">
-            {item.discount && (
-              <div className="absolute top-0 left-0 bg-red-500 text-white text-xs font-bold p-1 rounded-tr-md rounded-bl-md">
-                {item.discount}% OFF
-              </div>
-            )}
-            <div className="flex flex-col items-center gap-2">
+          <SwiperSlide key={item.id} className='sm:h-72 h-56 lg:h-80'>
+            <div className="shadow-md border-2 rounded-md p-2 relative bg-white">
+              {item.discount && (
+                <div className="absolute top-0 left-0 bg-red-500 text-white text-xs font-bold p-1 rounded-tr-md rounded-bl-md">
+                  {item.discount}% OFF
+                </div>
+              )}
               <img src={item.image} alt={item.name} className="rounded-md w-full object-cover h-28 sm:h-36 md:h-40 lg:h-48" />
               <h5 className="text-yellow-800 font-semibold text-[0.70rem] sm:text-[0.90rem] md:text-lg uppercase">{item.name}</h5>
               <div className="flex items-center justify-between w-full gap-2">
-                <button title="buy now" className="bg-warning  text-white py-2 px-2 text-xs lg:text-sm rounded-md w-1/2">
+                <button title="buy now">
                   ${item.price}
                 </button>
                 <button title="add to cart" className="bg-primary hover:bg-red-700 text-white py-2 px-2 text-xs lg:text-sm rounded-md w-1/2 flex items-center justify-center">
@@ -97,9 +146,9 @@ const SpecialOffers = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   );
 };
