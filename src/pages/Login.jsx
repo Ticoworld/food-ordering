@@ -16,8 +16,13 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-background">
-      <form className="w-80 max-w-sm bg-white shadow-md rounded px-8 pt-6 pb-8" onSubmit={handleSubmit}>
+    <div className="flex items-center justify-center min-h-screen bg-background ">
+      
+      
+      <form className="w-80 max-w-sm bg-Lightwarning shadow-md rounded px-8 pt-6 pb-8" onSubmit={handleSubmit}>
+        <Link to='/'>
+          <h2 className="text-warning font-bold text-3xl text-center">FOODIE</h2>
+        </Link>
         <h2 className="text-2xl text-center font-semibold mb-6 text-primary">Login</h2>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">

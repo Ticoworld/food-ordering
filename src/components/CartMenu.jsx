@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { FaTrashAlt, FaPlus, FaMinus } from 'react-icons/fa';
+import Swal from "sweetalert2";
 
 const CartMenu = () => {
   const initialCarts = [
@@ -71,8 +72,24 @@ const CartMenu = () => {
 
   const [myCarts, setMyCarts] = useState(initialCarts);
 
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  });
   const handleRemove = (id) => {
     setMyCarts(myCarts.filter((cart) => cart.id !== id));
+    Toast.fire({
+      icon: 'success',
+      title: 'ITEM REMOVED',
+      text: 'Item succesfully removed from cart' 
+  })
   };
 
   const handleIncrement = (id) => {

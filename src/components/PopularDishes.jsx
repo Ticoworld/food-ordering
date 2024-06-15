@@ -1,138 +1,148 @@
+import React from 'react';
 import { FaCartShopping } from "react-icons/fa6";
-
+import Swal from "sweetalert2";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
-import 'swiper/css/navigation';
 import { Autoplay, Pagination } from 'swiper/modules';
+
 const PopularDishes = () => {
   const Popular = [
     {
-        id:1,
-        image: '/Bitter leaf soup (Ofe Onugbu).jpeg',
-        dishName:'Onogbu soup',
-        price:30,
-        category: "swallow"
+      id: 1,
+      image: '/Bitter leaf soup (Ofe Onugbu).jpeg',
+      dishName: 'Onogbu soup',
+      price: 30,
+      discount: 20,
+      category: "swallow"
     },
     {
-        id:2,
-        image: 'ghana.jpeg',
-        dishName:'Jollof Rice',
-        price:30,
-        category: "swallow"
+      id: 2,
+      image: 'ghana.jpeg',
+      dishName: 'Jollof Rice',
+      price: 30,
+      discount: 15,
+      category: "swallow"
     },
     {
-        id:3,
-        image: `/coconut_rice2.jpeg`,
-        dishName:'Coconut RIce',
-        price:30,
-        category: "swallow"
+      id: 3,
+      image: `/coconut_rice2.jpeg`,
+      dishName: 'Coconut Rice',
+      price: 30,
+      discount: 25,
+      category: "swallow"
     },
     {
-        id:4,
-        image: '/okro.jpeg',
-        dishName:'Okro soup',
-        price:30,
-        category: "swallow"
-    },
-    
-    {
-        id:5,
-        image: '/egusi_soup.jpeg',
-        dishName:'Egusi soup',
-        price:30,
-        category: "swallow"
+      id: 4,
+      image: '/okro.jpeg',
+      dishName: 'Okro soup',
+      price: 30,
+      discount: 10,
+      category: "swallow"
     },
     {
-        id:6,
-        image: '/fried_rice.jpeg',
-        dishName:' Fried Rice',
-        price:30,
-        category: "swallow"
+      id: 5,
+      image: '/egusi_soup.jpeg',
+      dishName: 'Egusi soup',
+      price: 30,
+      discount: 5,
+      category: "swallow"
     },
     {
-        id:7,
-        image: '/nsala.jpeg',
-        dishName:' Nsala soup',
-        price:30,
-        category: "swallow"
+      id: 6,
+      image: '/fried_rice.jpeg',
+      dishName: 'Fried Rice',
+      price: 30,
+      discount: 18,
+      category: "swallow"
     },
     {
-        id:8,
-        image: '/moi.jpeg',
-        dishName:' Moi Moi',
-        price:30,
-        category: "swallow"
+      id: 7,
+      image: '/nsala.jpeg',
+      dishName: 'Nsala soup',
+      price: 30,
+      discount: 22,
+      category: "swallow"
     },
-    
-   
-]
-  return (<div className="px-6 bg-background py-2">
-    <h2 className="text-primary font-bold lg:text-2xl text-xl py-4">Popular Dishes</h2>
-     <div>
-     <Swiper
-              modules = {[Autoplay, Pagination]}
-              slidesPerView={3}
-              pagination={{ "clickable": true }}
-              autoplay = {{delay: 20000}}
-              spaceBetween={9}
-              breakpoints={
-              { 
-                  320: {
-                      slidesPerView: 3,
-                  },
-                  520: {
-                      slidesPerView: 4,
-                  },
-                  800: {
-                      slidesPerView: 5,
-                  },
-                  1024: {
-                      slidesPerView: 6,
-                  },
-              }
-              }
-              className="h-[15.1rem]  lg:px-4 px-0"
-          >
-              <div className=' border-blue-700 border-2'>
-                  {
-            Popular.map((popularDish) => ( 
-                  <SwiperSlide key={popularDish.id}>
-                <div className="xl:w-48 lg:w-[9.7rem]  border-yellow-600 border-2 rounded-md p-1 gap-2" key={popularDish.id}>
-                    <div className="flex items-center justify-between flex-col gap-0">
-                        <div>
-                        <img src={popularDish.image} alt=""  className="w-44 rounded-md h-[9rem] object-cover "/>   
-                        </div>
-                        <div className="details w-full">
-                            <h5 className="text-yellow-700 font-semibold lg:text-lg text-[0.70rem] uppercase text-wrap pt-1 ">{popularDish.dishName}</h5>
-                            <div className="flex items-center justify-between lg:gap-2 gap-1 py-1">
-                            <button title="buy now"
-                            className="bg-red-500 text-white py-[6px] px-3  text-xs lg:text-lg rounded-md cursor-pointer w-full"
-                        >
-                           ${popularDish.price}
-                        </button>
-                            <button title="add to cart"
-                            className="bg-warning text-white lg:py-2 py-0 x-2 text-center rounded-md cursor-pointer lg:px-3 px-1 flex items-center flex-row"
-                        > <div className="text-xl"   >
-                            +
-                        </div>
-                            <FaCartShopping className="lg:text-2xl text-lg text-accent cursor-pointer"   />
-                        </button>
-                            </div>
-                        
-                        </div>
-                    </div>
-                    </div> 
-                    </SwiperSlide>
-            ))
-        }
-                 
-            
+    {
+      id: 8,
+      image: '/moi.jpeg',
+      dishName: 'Moi Moi',
+      price: 30,
+      discount: 30,
+      category: "swallow"
+    }
+  ];
+
+  const featuredItems = Popular.slice(0, 3); // Example: First 3 items as featured
+
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  });
+
+  return (
+    <div className="p-5 bg-yellow-50">
+      <h1 className="text-2xl font-bold mb-4 text-center">Popular Dishes</h1>
+      <p>Order from our most popular dishes, favorites among our customers for their exceptional taste and quality.</p>
+      <Swiper
+        modules={[Autoplay, Pagination]}
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 5000 }}
+        spaceBetween={10}
+        className="mb-6"
+      >
+        {featuredItems.map((item) => (
+          <SwiperSlide key={item.id}>
+            <div className="bg-white shadow rounded p-4">
+              <img src={item.image} alt={item.dishName} className="w-full h-48 object-cover rounded" />
+              <h2 className="text-xl font-semibold mt-2">{item.dishName}</h2>
+              <p className="text-gray-600">${item.price}</p>
+              <button className="bg-primary text-white px-4 py-2 rounded mt-2 hover:bg-red-700">
+                Add to Cart
+              </button>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        {Popular.map((popularDish) => (
+          <div key={popularDish.id} className="relative shadow-md border-2 rounded-md p-2">
+            {popularDish.discount && (
+              <div className="absolute top-0 left-0 bg-red-500 text-white text-xs font-bold p-1 rounded-tr-md rounded-bl-md">
+                {popularDish.discount}% OFF
               </div>
-          </Swiper>
-       </div>
-  </div>);
+            )}
+            <div className="flex flex-col items-center gap-2">
+              <img src={popularDish.image} alt={popularDish.dishName} className="rounded-md w-full object-cover h-28 sm:h-36 md:h-40 lg:h-48" />
+              <h5 className="text-yellow-800 font-semibold text-[0.70rem] sm:text-[0.90rem] md:text-lg uppercase">{popularDish.dishName}</h5>
+              <div className="flex items-center justify-between w-full gap-2">
+                <button title="buy now">
+                  ${popularDish.price}
+                </button>
+                <button
+                  title="add to cart"
+                  className="bg-primary hover:bg-red-700 text-white py-2 px-2 text-xs lg:text-sm rounded-md w-1/2 flex items-center justify-center"
+                >
+                  <FaCartShopping className="text-lg lg:text-xl" />
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default PopularDishes;
