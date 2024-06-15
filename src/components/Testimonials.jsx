@@ -25,6 +25,7 @@ const Testimonials = () => {
   return (
     <div className="px-6 py-7 bg-gray-50">
       <h2 className="text-gray-900 text-center font-bold lg:text-2xl text-xl py-7">Customer Reviews</h2>
+      <p className="text-center mb-4 text-gray-700">Read what our satisfied customers have to say about their dining experience!</p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {reviews.map((review) => (
           <div key={review.id} className="bg-white shadow-md border-2 rounded-md p-4">

@@ -50,6 +50,7 @@ const QuickBites = () => {
   return (
     <div className="p-5 bg-background">
       <h1 className="text-2xl font-bold mb-4 text-center">Quick Bites</h1>
+      <p className="text-center mb-4 text-gray-700">Grab a quick and tasty bite anytime, perfect for when you're on the go!</p>
       <Swiper
         modules={[Autoplay, Pagination]}
         slidesPerView={1}
@@ -72,9 +73,9 @@ const QuickBites = () => {
         ))}
       </Swiper>
 
-      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-4">
         {items.map((item) => (
-          <div key={item.id} className="shadow-md border-2 rounded-md p-2 bg-white">
+          <div key={item.id} className="shadow-md border-2 rounded-md p-1 md:p-2 bg-white">
             <div className="flex flex-col items-center gap-2">
               <img src={item.image} alt={item.name} className="rounded-md w-full object-cover h-28 sm:h-36 md:h-40 lg:h-48" />
               <h5 className="text-yellow-800 font-semibold text-[0.70rem] sm:text-[0.90rem] md:text-lg uppercase">{item.name}</h5>

@@ -79,7 +79,7 @@ const SpecialOffers = () => {
   return (
     <div className="p-5 bg-background">
       <h1 className="text-2xl font-bold mb-4 text-center">Special Offers</h1>
-      <p className="text-center mb-4">Don't miss out on our special offers and discounts!</p>
+      <p className="text-center mb-4 text-gray-700">Take advantage of our special offers and save big on your favorite meals!</p>
 
       <Swiper
         modules={[Autoplay, Pagination]}
@@ -109,21 +109,21 @@ const SpecialOffers = () => {
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000 }}
         breakpoints={{
-          390: {
+          350: {
             slidesPerView: 3,
-            spaceBetween: 10,
+            spaceBetween: 12,
           },
-          600: {
+          720: {
             slidesPerView: 4,
-            spaceBetween: 30,
+            spaceBetween: 20,
           },
           1024: {
             slidesPerView: 5,
-            spaceBetween: 40,
+            spaceBetween: 30,
           },
           1280: {
             slidesPerView: 6,
-            spaceBetween: 50,
+            spaceBetween: 30,
           },
         }}
       >

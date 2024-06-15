@@ -92,7 +92,7 @@ const PopularDishes = () => {
   return (
     <div className="p-5 bg-background">
       <h1 className="text-2xl font-bold mb-4 text-center">Popular Dishes</h1>
-      <p>Order from our most popular dishes, favorites among our customers for their exceptional taste and quality.</p>
+      <p className="text-center mb-4 text-gray-700">Dive into our popular dishes that everyone loves. Order now and enjoy!</p>
       <Swiper
         modules={[Autoplay, Pagination]}
         slidesPerView={1}
@@ -115,9 +115,9 @@ const PopularDishes = () => {
         ))}
       </Swiper>
 
-      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 md:gap-4">
         {Popular.map((popularDish) => (
-          <div key={popularDish.id} className="relative shadow-md border-2 rounded-md p-2 bg-white">
+          <div key={popularDish.id} className="relative shadow-md border-2 rounded-md p-1 md:p-2 bg-white">
             {popularDish.discount && (
               <div className="absolute top-0 left-0 bg-red-500 text-white text-xs font-bold p-1 rounded-tr-md rounded-bl-md">
                 {popularDish.discount}% OFF

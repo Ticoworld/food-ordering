@@ -10,9 +10,7 @@ const Contact = () => {
   return (
     <div className="px-6 py-7 bg-gray-50">
       <h2 className="text-gray-900 text-center font-bold lg:text-2xl text-xl py-4">Contact Us</h2>
-      <p className="text-gray-700 text-center mb-6 lg:text-lg text-md">
-        Have any message or question? Contact us, we are available 24/7.
-      </p>
+      <p className="text-center mb-4 text-gray-700">Have any questions or messages? Contact us, we are available 24/7 to assist you.</p>
       <div className="max-w-2xl mx-auto bg-white p-8 rounded-md shadow-md">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
